@@ -20,4 +20,11 @@ public class StringTest {
 		assertThat(given.split(",")).containsExactly("1");
 	}
 
+	@Test
+	@DisplayName("괄호로 감싸진 문자열을 추출")
+	void extractString() {
+		String given = "(1,2)";
+		assertThat(given.substring(1, given.length() - 1)).isEqualTo("1,2");
+	}
+
 }
