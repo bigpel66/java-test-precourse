@@ -10,16 +10,14 @@ public class StringTest {
 	@DisplayName("여러 문자의 split 여부 확인")
 	void splitPlural() {
 		String given = "1,2";
-		String[] expected = {"1", "2"};
-		assertThat(given.split(",")).isEqualTo(expected);
+		assertThat(given.split(",")).containsExactly("1", "2");
 	}
 
 	@Test
 	@DisplayName("한 문자의 split 여부 확인")
 	void splitSingular() {
 		String given = "1";
-		String[] expected = {"1"};
-		assertThat(given.split(",")).isEqualTo(expected);
+		assertThat(given.split(",")).containsExactly("1");
 	}
 
 }
