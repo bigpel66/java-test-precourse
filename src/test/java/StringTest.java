@@ -27,4 +27,14 @@ public class StringTest {
 		assertThat(given.substring(1, given.length() - 1)).isEqualTo("1,2");
 	}
 
+	@Test
+	@DisplayName("문자열의 특정 문자를 확인")
+	void getCharAtString() {
+		String given = "abc";
+		char[] expected = {'a', 'b', 'c'};
+		for (int i = 0; i < given.length(); i++) {
+			assertThat(given.charAt(i)).isEqualTo(expected[i]);
+		}
+	}
+
 }
