@@ -42,7 +42,9 @@ public class StringTest {
 	@DisplayName("문자열 범위 밖의 특정 문자 확인 시 예외 발생을 확인")
 	void checkCharAtException() {
 		String given = "abc";
-		assertThatThrownBy(() -> given.charAt(given.length() + 1)).isInstanceOf(IndexOutOfBoundsException.class);
+		assertThatThrownBy(() -> given.charAt(given.length() + 1))
+				.isInstanceOf(IndexOutOfBoundsException.class)
+				.hasMessageContaining("index out of range: ");
 	}
 
 }
